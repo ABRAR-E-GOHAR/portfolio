@@ -28,5 +28,5 @@ jobs:
     - name: Install Surge
       run: npm install -g surge
     - name: Run surge
-      run: surge ./ my-portfolio.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./ abrar-portfolio.surge.sh --token ${{ secrets.SURGE_TOKEN }}
 
