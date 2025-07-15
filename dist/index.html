@@ -1,333 +1,1431 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  
+    <title>ABRAR E GOHAR - Senior Full Stack Developer</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6366f1",
+              secondary: "#8b5cf6",
+              accent: "#06b6d4",
+              dark: "#0f172a",
+              light: "#f8fafc",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+      }
+      .gradient-text {
+        background: linear-gradient(
+          135deg,
+          #667eea 0%,
+          #764ba2 50%,
+          #f093fb 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+      .fade-in {
+        animation: fadeIn 1s ease-out;
+      }
+      .slide-up {
+        animation: slideUp 0.8s ease-out;
+      }
+      .bounce-in {
+        animation: bounceIn 1s ease-out;
+      }
+      .float {
+        animation: float 3s ease-in-out infinite;
+      }
+      .pulse-glow {
+        animation: pulseGlow 2s ease-in-out infinite alternate;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes bounceIn {
+        0% {
+          opacity: 0;
+          transform: scale(0.3);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.05);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      @keyframes pulseGlow {
+        from {
+          box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+        to {
+          box-shadow: 0 0 30px rgba(99, 102, 241, 0.8);
+        }
+      }
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .skill-bar {
+        transition: width 1.5s ease-in-out;
+      }
+      .typing-effect {
+        overflow: hidden;
+        border-right: 2px solid #6366f1;
+        white-space: nowrap;
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #6366f1;
+        }
+      }
 
-  <title>ABRAR E GOHAR </title>  
-  <link rel="icon" href="./icon.jpg" type="image/icon type">
-<link href="./main.d8e0d294.css" rel="stylesheet"></head>
+      /* Navigation text color styles */
+      .nav-transparent a {
+        color: white;
+      }
+      .nav-transparent a:hover {
+        color: #67e8f9;
+      }
+      .nav-transparent #mobile-menu-btn {
+        color: white;
+      }
 
-<body class="">
+      .nav-scrolled a {
+        color: #1e293b;
+      }
+      .nav-scrolled a:hover {
+        color: #6366f1;
+      }
+      .nav-scrolled #mobile-menu-btn {
+        color: #1e293b;
+      }
+    </style>
+  </head>
 
-<!-- Add your content of header -->
-<div class="background-color-layer" style="background-image: url('assets/images/img-01.jpg')"
-></div>
-<main class="content-wrapper">
-  <header class="white-text-container section-container">
-    <div class="text-center">
-      <h1>ABRAR E GOHAR</h1>
-
-        <p style="color: white;">Sr Javascript Developer at 46 Labs LO. </p>
-        <p style="color: white;">React | NextJs | Typescript | AWS | Node | Express | Docker | Mongoose | Webflow | CI/CD Pipelines | GIT</p>
-   
-      <p>
-        <a target="blank" class="fa-icon fa-icon-2x" href="https://www.facebook.com/profile.php?id=100002586620323" title="Facebook">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a target="blank" class="fa-icon fa-icon-2x" href="https://www.linkedin.com/in/abrar-e-gohar/" title="LinkedIn">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a target="blank" class="fa-icon fa-icon-2x" href="https://github.com/ABRAR-E-GOHAR" title="Github">
-          <i class="fa fa-github"></i>
-        </a>
-        <p class="social-buttons"><span class="social-round-icon fa-icon"><i class="fa fa-whatsapp"></i></span>+92 306-3700303</p>
-
-      </p>
-    </div>
-  </header>
-
-
-
-<!-- Add your site or app content here -->
- 
- <div class="container">
-   <div class="row">
-     <div class="col-xs-12">
-
-        <div class="card">
-          <div class="card-block">
-            <h2>About me</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <p><img src="./assets/images/img-01.jpg" class="img-responsive" alt=""></p>
-              </div>
-              <div class="col-md-8">
-                <ul>
-                  <li>
-                    BS Hons degree in Computer Science
-                  </li>
-                  <li>                In depth knowledge of JavaScript,NodeJS, ExpressJS, MONGO-DB and Webflow Designing.
-                  </li>
-                  <li>                Experience implementing applications using React.js & React-Native
-                  </li>
-                  <li>                Experience creating front end applications using HTML5,CSS3,Tailwind CSS, Bootstrap4, Webflow, React.
-                  </li>
-                  <li>                Hands on experience with JavaScript Development on both client and server-side
-                  </li>
-                  <li>                Experience with modern frameworks and design patterns, minimum one-year experience with MERN Fullstack paradigm
-                  </li>
-                  <li>                Consumer Web Development Experience for High-Traffic, Public Facing web applications
-                  </li>
-                  <li>                Experience with cloud technologies
-                  </li>
-                  <li>                Creating secure RESTful-based web services in XML and JSON, Javascript, JQuery
-                  </li>
-                  <li>                Continuous integration with version control (Git).
-                  </li>
-                  <li>                Revised, modularized and updated old code bases to modern development standards, reducing operating costs and improving functionality.
-                  </li>
-                  <li>               Experience to Develop high-performance applications by writing testable, reusable, and efficient code. 
-                  </li>
-
-                </ul>
-              </div>
-            </div>
+  <body class="bg-slate-50 text-slate-800 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent nav-transparent"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="text-2xl font-bold gradient-text">AG</div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#about"
+              class="transition-all duration-300 hover:scale-110 font-medium"
+              >About</a
+            >
+            <a
+              href="#experience"
+              class="transition-all duration-300 hover:scale-110 font-medium"
+              >Experience</a
+            >
+            <a
+              href="#projects"
+              class="transition-all duration-300 hover:scale-110 font-medium"
+              >Projects</a
+            >
+            <a
+              href="#contact"
+              class="transition-all duration-300 hover:scale-110 font-medium"
+              >Contact</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="p-2">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
           </div>
         </div>
-
-
-        <div class="card">
-          <div class="card-block">
-            <h2>Experience</h2>
-            <div class="row">
-              <div class="col-md-12">
-                <a href="https://www.linkedin.com/company/46labs/" target="blank" >
-                <h3 class="h5">Senior Javascript Developer  (React/Typescript/Node/MERN Stack)</h3></a>
-                <p>46 Labs Pvt. Limited Lahore (June 2021-Present)</p>
-                <ul>
-                  <li>Revised, modularized and updated old code bases to modern development standards, reducing operating costs and improving functionality.</li> 
-                  <li>Handled incident management and problem management activities for personal and third party interface designs.</li> 
-                  <li>Real time implementation with Web Sockets (i.e. ActionCable.io)</li> 
-                  <li>Ant Design Forms</li> 
-                  <li>React Query</li> 
-                  <li>Typescript</li> 
-                  <li>Redux Forms</li> 
-                  <li>Express.js</li> 
-                  <li>NoSql Databases (Mongo) </li> 
-                  <li>AWS (S3), Route 53, EC2, Cloudfront</li> 
-                  <li>Designed REST calls using React to streamline user interface performance.</li> 
-                  <li>CMS using Webflow</li> 
-                </ul>
-              </div>
-            
-             
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <a href="https://www.linkedin.com/company/b4u-cabs/" target="blank" > 
-                <h3 class="h5">Javascript Team Leader (React Js, React Native)</h3></a>
-                <p>B4uSoft Pvt. Limited Lahore. (Sep 2020 -  June 2021)</p>
-                <ul>
-                  <li>Developed user interfaces for deployment on Amazon Web Services (AWS) platforms, including [Product or Service] and [Product or Service]. </li> 
-                  <li>Coordinated with project management staff on database development timelines and project scope. </li> 
-                  <li>Created mobile applications based on React, integrating Facebook's best practices for interface design. </li> 
-                  <li>Real time implementation with Web Sockets (i.e. Socket.io) </li> 
-                  <li>Work with Redux Saga Middleware. </li> 
-                  <li>Modern ES6 syntax and optimized code.  </li> 
-                 
-                </ul>
-              </div>
-            
-             
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <a href="https://www.linkedin.com/company/intelliscence/" target="blank" > 
-                <h3 class="h5">MERN Stack Developer</h3></a>
-                <p>Intelliscence Software House Lahore.  (March 2020 -  Sep 2020)</p>
-                <ul>
-                  <li>Develop high-performance applications by writing testable, reusable, and efficient code.   </li> 
-                  <li>Implement effective security protocols, data protection measures, and storage solutions.   </li> 
-                  <li>Run diagnostic tests, repairing defects, and providing technical support.  </li> 
-                  <li>Node.js processes, including database schemas, as well as preparing reports.   </li> 
-                  <li>Real time implementation with Web Sockets. </li> 
-                  <li>Work with NoSql Database (i.e. MongoDb). </li> 
-                  <li>Deployement on netlify, heroku etc. </li>
-                 
-                </ul>
-              </div>
-            
-             
-            </div>
-
-
-            <div class="row">
-              <div class="col-md-12">
-                <a href="https://www.linkedin.com/company/saylani-welfare-international-trust-official/" target="blank" >
-                <h3 class="h5">MERN Stack Developer</h3></a>
-                <p>Saylani IT Lab, Faisalabad. (March 2019 -  Feb 2020)</p>
-                <ul>
-                  <li>Exceeded goals through effective task prioritization and great work ethic.  </li> 
-                  <li>Increased customer satisfaction by resolving [product or service] issues.  </li> 
-                  <li>React Js with modern ES6. </li> 
-                  <li>Work with Pure Css, Tailwind css, Bootstrap and other modern UI flavours.  </li> 
-                  <li>Work with ExpressJs. </li> 
-                  <li>Real time implementation with Web Sockets. </li> 
-                  <li>Work with NoSql Database (i.e. MongoDb). </li> 
-                  <li>Deployement on netlify, heroku etc. </li>
-                 
-                </ul>
-              </div>
-            
-             
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-block">
-            <h2>Projects</h2>
-
-            <div class="row" style="margin-bottom: 60px;">
-              <div class="col-md-4">
-                <a href="https://46labs.com" target="blank" > <img src="./assets/images/46labs.png" class="img-responsive" alt="46Labs">
-                <h3 class="h5">46Labs</h3></a>
-              </div>
-              <div class="col-md-4">
-                <a href="https://examsresult4u.netlify.app/" target="blank" > <img src="./assets/images/exams-result.png" class="img-responsive" alt="46Labs">
-                <h3 class="h5">LMS</h3></a>
-              </div>
-
-
-              <div class="col-md-4">
-                <a href="https://timetable4u.netlify.app/" target="blank" > <img src="./assets/images/timetable.png" class="img-responsive" alt="">
-                <h3 class="h5">TIMETABLE GENERATOR</h3></a>
-              </div>
-             
-            </div>
-
-            <div class="row" style="margin-bottom: 60px;">
-             
-            <div class="col-md-4">
-              <a href="https://generate-paper.netlify.app/" target="blank" > <img src="./assets/images/Paper-generator.png" class="img-responsive" alt="">
-              <h3 class="h5">Paper Generator</h3></a>
-            </div>
-         
-
-
-       
-             
-            </div>
-
-
-        
-          </div>
-        </div>
-
-        
-
-        <div class="card">
-          <div class="card-block">
-            <h2>Education</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2016-2020</small>
-                  <h3 class="h5 date-title">BS Hons Computer Science</h3>
-                  <p>University of Agriculture Faisalabad</p>
-                </div>
-                
-              </div>
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2014-2016</small>
-                  <h3 class="h5 date-title">F.Sc. Pre-Engineering</h3>
-                  <p>BISE Faisalabad</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2012-2014</small>
-                  <h3 class="h5 date-title">Matric (Science)</h3>
-                  <p>BISE Faisalabad</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-block">
-            <h2>Language</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5">English </h3>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5">Urdu</h3>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5">Punjabi</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-        <div class="card">
-          <div class="card-block">
-            <h2>Social Network</h2>
-            <div class="row">
-              <div class="col-md-3">
-                <p class="social-buttons"><a href="https://www.facebook.com/profile.php?id=100002586620323facebook" title="Facebook"><span class="social-round-icon fa-icon"><i class="fa fa-facebook"></i></span>ABRAR_E_GOHAR</a></p>
-              </div>
-              <div class="col-md-3">
-                <p class="social-buttons"><a href="https://www.linkedin.com/in/abrar-e-gohar/" title="LinkedIn"><span class="social-round-icon fa-icon"><i class="fa fa-linkedin"></i></span>ABRAR E GOHAR</a></p>
-              </div>
-              <div class="col-md-3">
-                <p class="social-buttons"><a href="https://github.com/ABRAR-E-GOHAR" title="Github"><span class="social-round-icon fa-icon"><i class="fa fa-github"></i></span>ABRAR E GOHAR</a></p>
-              </div>
-              <div class="col-md-3">
-                <p class="social-buttons"><span class="social-round-icon fa-icon"><i class="fa fa-whatsapp"></i></span>+92 306-3700303</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-    
-       
-     </div>
-   </div>
- </div>
-
-</main>
-<footer class="footer-container white-text-container text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p><img src="./assets/images/mashup-icon.svg" alt=""></p>
-        
-        <p>©All right reserved</p>
-        <p>
-          <a class="fa-icon fa-icon-2x" href="https://www.facebook.com/profile.php?id=100002586620323" title="Facebook">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/in/abrar-e-gohar/" title="LinkedIn">
-            <i class="fa fa-linkedin"></i>
-          </a>
-          <a class="fa-icon fa-icon-2x" href="https://github.com/ABRAR-E-GOHAR" title="Github">
-            <i class="fa fa-github"></i>
-          </a>
-        </p>
       </div>
-    </div>
-  </div>
-</footer>
+    </nav>
 
+    <!-- Hero Section -->
+    <section
+      class="gradient-bg min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+    >
+      <div class="absolute inset-0 bg-black/20"></div>
+      <div
+        class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full float"
+      ></div>
+      <div
+        class="absolute bottom-20 right-10 w-32 h-32 bg-white/10 rounded-full float"
+        style="animation-delay: 1s"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/4 w-16 h-16 bg-white/10 rounded-full float"
+        style="animation-delay: 2s"
+      ></div>
 
+      <div class="relative z-10 text-center text-white px-4">
+        <div class="fade-in">
+          <div
+            class="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden border-4 border-white/30 pulse-glow relative"
+          >
+            <img
+              src="./assets/images/img-01.jpg"
+              alt="Abrar E Gohar"
+              class="w-full h-full object-cover object-top"
+            />
+          </div>
+          <h1
+            class="text-4xl md:text-7xl lg:text-8xl font-bold mb-4 text-shadow typing-effect"
+          >
+            ABRAR E GOHAR
+          </h1>
+          <p class="text-2xl md:text-3xl mb-6 opacity-90 slide-up">
+            Senior Full Stack Developer
+          </p>
+          <p class="text-lg mb-8 max-w-4xl mx-auto opacity-80 slide-up">
+            Crafting exceptional digital experiences with React | Next.js |
+            TypeScript | Node.js | AWS | Docker | MongoDB
+          </p>
 
+          <div class="flex justify-center space-x-6 mb-8 slide-up">
+            <a
+              href="https://www.facebook.com/profile.php?id=100002586620323"
+              target="_blank"
+              class="text-white hover:text-cyan-300 transition-all duration-300 text-3xl hover:scale-125"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abrar-e-gohar/"
+              target="_blank"
+              class="text-white hover:text-cyan-300 transition-all duration-300 text-3xl hover:scale-125"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://github.com/ABRAR-E-GOHAR"
+              target="_blank"
+              class="text-white hover:text-cyan-300 transition-all duration-300 text-3xl hover:scale-125"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
 
+          <div class="flex items-center justify-center space-x-2 slide-up">
+            <i class="fab fa-whatsapp text-green-400 text-xl"></i>
+            <span class="text-lg">+92 306-3700303</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold gradient-text mb-6">About Me</h2>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"
+          ></div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-2 space-y-8">
+            <div
+              class="card-hover bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl p-8 border border-primary/20"
+            >
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                🎓 Education
+              </h3>
+              <p class="text-slate-700 text-lg">
+                BS Hons degree in Computer Science
+              </p>
+              <p class="text-slate-600">University of Agriculture Faisalabad</p>
+            </div>
+
+            <div class="space-y-6">
+              <h3 class="text-2xl font-bold text-slate-900">
+                🚀 Core Competencies
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div
+                  class="bg-slate-50 rounded-xl p-4 hover:bg-primary/5 transition-colors"
+                >
+                  <h4 class="font-semibold text-primary mb-2 flex items-center">
+                    <i class="fab fa-react text-2xl mr-3 text-blue-500"></i>
+                    Frontend Development
+                  </h4>
+                  <p class="text-sm text-slate-600">
+                    <i class="fab fa-react text-blue-500 mr-1"></i>React,
+                    <i class="fab fa-node-js text-green-600 mr-1"></i>Next.js,
+                    <i class="fab fa-js text-yellow-500 mr-1"></i>TypeScript,
+                    <i class="fas fa-palette text-purple-500 mr-1"></i>Tailwind
+                    CSS,
+                    <i class="fab fa-bootstrap text-purple-600 mr-1"></i
+                    >Bootstrap
+                  </p>
+                </div>
+                <div
+                  class="bg-slate-50 rounded-xl p-4 hover:bg-primary/5 transition-colors"
+                >
+                  <h4 class="font-semibold text-primary mb-2 flex items-center">
+                    <i class="fas fa-server text-2xl mr-3 text-green-600"></i>
+                    Backend Development
+                  </h4>
+                  <p class="text-sm text-slate-600">
+                    <i class="fab fa-node-js text-green-600 mr-1"></i>Node.js,
+                    <i class="fas fa-code text-blue-500 mr-1"></i>Express.js,
+                    <i class="fas fa-database text-green-500 mr-1"></i>MongoDB,
+                    <i class="fas fa-plug text-purple-500 mr-1"></i>RESTful APIs
+                  </p>
+                </div>
+                <div
+                  class="bg-slate-50 rounded-xl p-4 hover:bg-primary/5 transition-colors"
+                >
+                  <h4 class="font-semibold text-primary mb-2 flex items-center">
+                    <i class="fas fa-cloud text-2xl mr-3 text-blue-600"></i>
+                    Cloud & DevOps
+                  </h4>
+                  <p class="text-sm text-slate-600">
+                    <i class="fab fa-aws text-orange-500 mr-1"></i>AWS,
+                    <i class="fab fa-docker text-blue-500 mr-1"></i>Docker,
+                    <i class="fas fa-sync text-green-500 mr-1"></i>CI/CD,
+                    <i class="fab fa-git-alt text-orange-600 mr-1"></i>Git,
+                    <i class="fas fa-rocket text-purple-500 mr-1"></i>Deployment
+                  </p>
+                </div>
+                <div
+                  class="bg-slate-50 rounded-xl p-4 hover:bg-primary/5 transition-colors"
+                >
+                  <h4 class="font-semibold text-primary mb-2 flex items-center">
+                    <i class="fas fa-bolt text-2xl mr-3 text-yellow-500"></i>
+                    Real-time & CMS
+                  </h4>
+                  <p class="text-sm text-slate-600">
+                    <i class="fas fa-wifi text-blue-500 mr-1"></i>WebSockets,
+                    <i class="fas fa-globe text-blue-600 mr-1"></i>Webflow,
+                    <i class="fas fa-comments text-green-500 mr-1"></i>Socket.io
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-1 flex justify-center">
+            <div class="relative group w-80">
+              <div class="relative overflow-hidden rounded-2xl shadow-xl">
+                <img
+                  src="./assets/images/img-01.jpg"
+                  alt="Abrar E Gohar"
+                  class="w-full h-96 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+
+              <!-- Professional Info Overlay -->
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 text-white"
+              >
+                <h3 class="text-lg font-bold mb-1">Abrar E Gohar</h3>
+                <p class="text-sm opacity-90">Senior Full Stack Developer</p>
+                <p class="text-xs opacity-75">5+ Years of Experience</p>
+              </div>
+
+              <!-- Open to Work Badge -->
+              <div
+                class="absolute bottom-20 right-4 bg-white/90 backdrop-blur-sm text-green-700 px-4 py-2 rounded-full shadow-lg border border-green-200"
+              >
+                <div class="flex items-center space-x-2">
+                  <div
+                    class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
+                  ></div>
+                  <span class="text-sm font-semibold">Open to Work</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold gradient-text mb-6">
+            Technical Skills
+          </h2>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"
+          ></div>
+        </div>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6"
+        >
+          <!-- Frontend Skills -->
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-react text-4xl text-blue-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">React</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-node-js text-4xl text-green-600 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Next.js</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-js text-4xl text-yellow-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">TypeScript</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-js-square text-4xl text-yellow-400 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">JavaScript</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-html5 text-4xl text-orange-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">HTML5</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-css3-alt text-4xl text-blue-600 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">CSS3</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-palette text-4xl text-cyan-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Tailwind CSS</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-bootstrap text-4xl text-purple-600 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Bootstrap</p>
+          </div>
+
+          <!-- Backend Skills -->
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-node-js text-4xl text-green-600 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Node.js</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-code text-4xl text-blue-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Express.js</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-database text-4xl text-green-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">MongoDB</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-plug text-4xl text-purple-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">RESTful APIs</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-wifi text-4xl text-blue-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">WebSockets</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-comments text-4xl text-green-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Socket.io</p>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-aws text-4xl text-orange-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">AWS</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-docker text-4xl text-blue-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Docker</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-git-alt text-4xl text-orange-600 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Git</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-sync text-4xl text-green-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">CI/CD</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-rocket text-4xl text-purple-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Deployment</p>
+          </div>
+
+          <!-- CMS & Tools -->
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-globe text-4xl text-blue-600 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Webflow</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fab fa-react text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">React Native</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-mobile-alt text-4xl text-blue-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Mobile Dev</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-cogs text-4xl text-gray-600 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">Algorithms</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-paint-brush text-4xl text-pink-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">UI/UX</p>
+          </div>
+
+          <div class="card-hover bg-white rounded-xl p-4 text-center group">
+            <i
+              class="fas fa-file-pdf text-4xl text-red-500 mb-3 group-hover:scale-110 transition-transform duration-300"
+            ></i>
+            <p class="text-xs font-semibold text-slate-700">PDF Gen</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold gradient-text mb-6">
+            Professional Journey
+          </h2>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"
+          ></div>
+        </div>
+
+        <div class="space-y-12">
+          <!-- Current Job -->
+          <div
+            class="card-hover bg-white rounded-2xl p-10 shadow-xl border-l-4 border-green-500 relative overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full -translate-y-16 translate-x-16"
+            ></div>
+            <div class="relative z-10">
+              <div
+                class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6"
+              >
+                <div>
+                  <h3 class="text-3xl font-bold text-slate-900 mb-3">
+                    <a
+                      href="https://www.linkedin.com/company/46labs/"
+                      target="_blank"
+                      class="hover:text-primary transition-colors"
+                    >
+                      Senior Full Stack Developer
+                    </a>
+                  </h3>
+                  <p class="text-xl text-slate-600 mb-2">
+                    46 Labs Pvt. Limited Lahore
+                  </p>
+                  <p class="text-sm text-slate-500">June 2021 - Present</p>
+                </div>
+                <div class="mt-4 lg:mt-0">
+                  <span
+                    class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold"
+                    >Current Position</span
+                  >
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 class="font-semibold text-primary mb-3">
+                    Key Achievements:
+                  </h4>
+                  <ul class="space-y-2 text-slate-600">
+                    <li class="flex items-start">
+                      <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
+                      <span
+                        >Led modernization of legacy codebases, improving
+                        performance by 40%</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
+                      <span
+                        >Implemented real-time features using WebSockets and
+                        ActionCable.io</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="fas fa-star text-yellow-500 mt-1 mr-3"></i>
+                      <span
+                        >Architected scalable solutions using React Query,
+                        TypeScript, and Redux</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-primary mb-3">Technologies:</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span
+                      class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                      >React</span
+                    >
+                    <span
+                      class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                      >TypeScript</span
+                    >
+                    <span
+                      class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                      >Node.js</span
+                    >
+                    <span
+                      class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                      >AWS</span
+                    >
+                    <span
+                      class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm"
+                      >MongoDB</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Previous Jobs -->
+          <div class="card-hover bg-white rounded-2xl p-10 shadow-xl">
+            <h3 class="text-3xl font-bold text-slate-900 mb-3">
+              <a
+                href="https://www.linkedin.com/company/b4u-cabs/"
+                target="_blank"
+                class="hover:text-primary transition-colors"
+              >
+                JavaScript Team Leader
+              </a>
+            </h3>
+            <p class="text-xl text-slate-600 mb-2">
+              B4uSoft Pvt. Limited Lahore
+            </p>
+            <p class="text-sm text-slate-500 mb-6">Sep 2020 - June 2021</p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-primary mb-3">
+                  Leadership & Development:
+                </h4>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                    <span
+                      >Led development team in creating AWS-deployed
+                      applications</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                    <span>Implemented real-time features using Socket.io</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                    <span
+                      >Optimized code performance using Redux Saga and
+                      ES6+</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-primary mb-3">Technologies:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm"
+                    >React Native</span
+                  >
+                  <span
+                    class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm"
+                    >Redux Saga</span
+                  >
+                  <span
+                    class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm"
+                    >AWS</span
+                  >
+                  <span
+                    class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm"
+                    >Socket.io</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-hover bg-white rounded-2xl p-10 shadow-xl">
+            <h3 class="text-3xl font-bold text-slate-900 mb-3">
+              <a
+                href="https://www.linkedin.com/company/intelliscence/"
+                target="_blank"
+                class="hover:text-primary transition-colors"
+              >
+                MERN Stack Developer
+              </a>
+            </h3>
+            <p class="text-xl text-slate-600 mb-2">
+              Intelliscence Software House Lahore
+            </p>
+            <p class="text-sm text-slate-500 mb-6">March 2020 - Sep 2020</p>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 class="font-semibold text-primary mb-3">
+                  Full Stack Development:
+                </h4>
+                <ul class="space-y-2 text-slate-600">
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                    <span
+                      >Built high-performance applications with testable,
+                      reusable code</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                    <span
+                      >Implemented secure RESTful APIs and data protection
+                      measures</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                    <span
+                      >Deployed applications on Netlify, Heroku with CI/CD
+                      pipelines</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold text-primary mb-3">Technologies:</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm"
+                    >MERN Stack</span
+                  >
+                  <span
+                    class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm"
+                    >Express.js</span
+                  >
+                  <span
+                    class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm"
+                    >Netlify</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold gradient-text mb-6">
+            Featured Projects
+          </h2>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"
+          ></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="card-hover bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200 group"
+          >
+            <a href="https://46labs.com" target="_blank">
+              <div class="relative overflow-hidden">
+                <img
+                  src="./assets/images/46labs.png"
+                  alt="46Labs"
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">46Labs</h3>
+                <p class="text-slate-600 mb-4">
+                  Professional corporate website showcasing innovative solutions
+                  and services
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-primary/10 text-primary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fab fa-react mr-1"></i>React</span
+                  >
+                  <span
+                    class="bg-primary/10 text-primary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fab fa-js mr-1"></i>TypeScript</span
+                  >
+                  <span
+                    class="bg-primary/10 text-primary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fas fa-globe mr-1"></i>Webflow</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200 group"
+          >
+            <a href="https://examsresult4u.netlify.app/" target="_blank">
+              <div class="relative overflow-hidden">
+                <img
+                  src="./assets/images/exams-result.png"
+                  alt="LMS"
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Learning Management System
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Comprehensive educational platform for exam management and
+                  results
+                </p>
+                <div
+                  class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4"
+                >
+                  <p class="text-sm text-yellow-800 font-semibold mb-1">
+                    Test Account:
+                  </p>
+                  <p class="text-xs text-yellow-700">Email: test@account.com</p>
+                  <p class="text-xs text-yellow-700">
+                    Password: test@account.com
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fab fa-react mr-1"></i>React</span
+                  >
+                  <span
+                    class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fab fa-node-js mr-1"></i>Node.js</span
+                  >
+                  <span
+                    class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fas fa-database mr-1"></i>MongoDB</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200 group"
+          >
+            <a href="https://timetable4u.netlify.app/" target="_blank">
+              <div class="relative overflow-hidden">
+                <img
+                  src="./assets/images/timetable.png"
+                  alt="Timetable Generator"
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Timetable Generator
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Intelligent scheduling system for educational institutions
+                </p>
+                <div
+                  class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 mb-4"
+                >
+                  <p class="text-sm text-yellow-800 font-semibold mb-1">
+                    Test Account:
+                  </p>
+                  <p class="text-xs text-yellow-700">Email: test@account.com</p>
+                  <p class="text-xs text-yellow-700">
+                    Password: test@account.com
+                  </p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-accent/10 text-accent px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fab fa-react mr-1"></i>React</span
+                  >
+                  <span
+                    class="bg-accent/10 text-accent px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fas fa-cogs mr-1"></i>Algorithm</span
+                  >
+                  <span
+                    class="bg-accent/10 text-accent px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fas fa-paint-brush mr-1"></i>UI/UX</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200 group"
+          >
+            <a href="https://www.carzdeals.com" target="_blank">
+              <div class="relative overflow-hidden">
+                <img
+                  src="./assets/images/carzdeals.png"
+                  alt="Carz Deals"
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Carz Deals
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Comprehensive automotive marketplace and deals platform
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-primary/10 text-primary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fab fa-react mr-1"></i>React</span
+                  >
+                  <span
+                    class="bg-primary/10 text-primary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fas fa-shopping-cart mr-1"></i>E-commerce</span
+                  >
+                  <span
+                    class="bg-primary/10 text-primary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fas fa-credit-card mr-1"></i>Payment</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-200 group"
+          >
+            <a href="https://generate-paper.netlify.app/" target="_blank">
+              <div class="relative overflow-hidden">
+                <img
+                  src="./assets/images/Paper-generator.png"
+                  alt="Paper Generator"
+                  class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-slate-900 mb-2">
+                  Paper Generator
+                </h3>
+                <p class="text-slate-600 mb-4">
+                  Automated exam paper generation with intelligent question
+                  selection
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fab fa-react mr-1"></i>React</span
+                  >
+                  <span
+                    class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fas fa-cogs mr-1"></i>Algorithm</span
+                  >
+                  <span
+                    class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs flex items-center"
+                    ><i class="fas fa-file-pdf mr-1"></i>PDF</span
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-24 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold gradient-text mb-6">Education</h2>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"
+          ></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="card-hover bg-white rounded-2xl p-8 shadow-xl text-center group"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-graduation-cap text-white text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              BS Hons Computer Science
+            </h3>
+            <p class="text-slate-600 mb-3">
+              University of Agriculture Faisalabad
+            </p>
+            <p
+              class="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full inline-block"
+            >
+              2016-2020
+            </p>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl p-8 shadow-xl text-center group"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-book text-white text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              F.Sc. Pre-Engineering
+            </h3>
+            <p class="text-slate-600 mb-3">BISE Faisalabad</p>
+            <p
+              class="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full inline-block"
+            >
+              2014-2016
+            </p>
+          </div>
+
+          <div
+            class="card-hover bg-white rounded-2xl p-8 shadow-xl text-center group"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-certificate text-white text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">
+              Matric (Science)
+            </h3>
+            <p class="text-slate-600 mb-3">BISE Faisalabad</p>
+            <p
+              class="text-sm text-slate-500 bg-slate-100 px-3 py-1 rounded-full inline-block"
+            >
+              2012-2014
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold gradient-text mb-6">Languages</h2>
+          <div
+            class="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"
+          ></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 text-center group"
+          >
+            <div
+              class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-flag text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">English</h3>
+            <p class="text-slate-600">Professional Proficiency</p>
+          </div>
+          <div
+            class="card-hover bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 text-center group"
+          >
+            <div
+              class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-flag text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Urdu</h3>
+            <p class="text-slate-600">Native Speaker</p>
+          </div>
+          <div
+            class="card-hover bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 text-center group"
+          >
+            <div
+              class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-flag text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">Punjabi</h3>
+            <p class="text-slate-600">Native Speaker</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 gradient-bg relative overflow-hidden">
+      <div
+        class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full float"
+      ></div>
+      <div
+        class="absolute bottom-20 right-10 w-32 h-32 bg-white/10 rounded-full float"
+        style="animation-delay: 1s"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-20">
+          <h2 class="text-5xl font-bold text-white mb-6">Let's Connect</h2>
+          <div class="w-32 h-1 bg-white mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center group">
+            <a
+              href="https://www.facebook.com/profile.php?id=100002586620323"
+              target="_blank"
+              class="block p-8 glass-effect rounded-2xl hover:bg-white/20 transition-all duration-300 group-hover:scale-105"
+            >
+              <i
+                class="fab fa-facebook text-4xl text-white mb-6 group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <h3 class="text-white font-semibold text-lg mb-2">Facebook</h3>
+              <p class="text-white/80">ABRAR_E_GOHAR</p>
+            </a>
+          </div>
+
+          <div class="text-center group">
+            <a
+              href="https://www.linkedin.com/in/abrar-e-gohar/"
+              target="_blank"
+              class="block p-8 glass-effect rounded-2xl hover:bg-white/20 transition-all duration-300 group-hover:scale-105"
+            >
+              <i
+                class="fab fa-linkedin text-4xl text-white mb-6 group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <h3 class="text-white font-semibold text-lg mb-2">LinkedIn</h3>
+              <p class="text-white/80">ABRAR E GOHAR</p>
+            </a>
+          </div>
+
+          <div class="text-center group">
+            <a
+              href="https://github.com/ABRAR-E-GOHAR"
+              target="_blank"
+              class="block p-8 glass-effect rounded-2xl hover:bg-white/20 transition-all duration-300 group-hover:scale-105"
+            >
+              <i
+                class="fab fa-github text-4xl text-white mb-6 group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <h3 class="text-white font-semibold text-lg mb-2">GitHub</h3>
+              <p class="text-white/80">ABRAR E GOHAR</p>
+            </a>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="block p-8 glass-effect rounded-2xl hover:bg-white/20 transition-all duration-300 group-hover:scale-105"
+            >
+              <i
+                class="fab fa-whatsapp text-4xl text-white mb-6 group-hover:scale-110 transition-transform duration-300"
+              ></i>
+              <h3 class="text-white font-semibold text-lg mb-2">WhatsApp</h3>
+              <p class="text-white/80">+92 306-3700303</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="mb-8">
+          <img
+            src="./assets/images/mashup-icon.svg"
+            alt="Portfolio"
+            class="w-20 h-20 mx-auto mb-6"
+          />
+          <p class="text-slate-400 text-lg">
+            © 2024 Abrar E Gohar. All rights reserved.
+          </p>
+          <p class="text-slate-500 mt-2">
+            Crafting digital excellence with passion and precision
+          </p>
+        </div>
+
+        <div class="flex justify-center space-x-8">
+          <a
+            href="https://www.facebook.com/profile.php?id=100002586620323"
+            target="_blank"
+            class="text-slate-400 hover:text-white transition-all duration-300 text-2xl hover:scale-125"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/abrar-e-gohar/"
+            target="_blank"
+            class="text-slate-400 hover:text-white transition-all duration-300 text-2xl hover:scale-125"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/ABRAR-E-GOHAR"
+            target="_blank"
+            class="text-slate-400 hover:text-white transition-all duration-300 text-2xl hover:scale-125"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add scroll effect to navigation
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+
+        if (window.scrollY > 100) {
+          nav.classList.add(
+            "shadow-lg",
+            "bg-white/95",
+            "backdrop-blur-md",
+            "nav-scrolled"
+          );
+          nav.classList.remove("bg-transparent", "nav-transparent");
+        } else {
+          nav.classList.remove(
+            "shadow-lg",
+            "bg-white/95",
+            "backdrop-blur-md",
+            "nav-scrolled"
+          );
+          nav.classList.add("bg-transparent", "nav-transparent");
+        }
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all cards and sections
+      document.querySelectorAll(".card-hover, section").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Mobile menu toggle - simple alert for now
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener("click", function () {
+          // Simple navigation - you can enhance this later
+          const sections = ["about", "experience", "projects", "contact"];
+          const currentSection = sections.find((section) => {
+            const element = document.getElementById(section);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              return rect.top <= 100 && rect.bottom >= 100;
+            }
+            return false;
+          });
+
+          // Navigate to next section or first if none found
+          const currentIndex = sections.indexOf(currentSection);
+          const nextIndex = (currentIndex + 1) % sections.length;
+          const nextSection = document.getElementById(sections[nextIndex]);
+          if (nextSection) {
+            nextSection.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      }
+
+      // Add typing effect to hero title
+      const heroTitle = document.querySelector(".typing-effect");
+      if (heroTitle) {
+        heroTitle.style.width = "0";
+        setTimeout(() => {
+          heroTitle.style.width = "100%";
+        }, 500);
+      }
+    </script>
+  </body>
 </html>
